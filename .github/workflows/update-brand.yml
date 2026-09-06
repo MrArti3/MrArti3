@@ -1,0 +1,38 @@
+name: Update Crypto Income Hub branding
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-brand:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Replace site branding
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+          text = text.replace('Crypto Passive Income Network | Crypto Earning Directory', 'Crypto Income Hub | Crypto Earning Directory')
+          text = text.replace('Crypto Passive Income Network', 'Crypto Income Hub')
+          p.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit branding update
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            echo 'No branding changes needed.'
+          else
+            git commit -m 'Update site branding to Crypto Income Hub'
+            git push
+          fi
