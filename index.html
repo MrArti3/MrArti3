@@ -1,549 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Passive Income - Referral Network</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Passive Income Network — Community-Tested Earning Platforms</title>
+  <meta name="description" content="A community hub sharing crypto earning platforms: bandwidth sharing, play-to-earn games, and reward sites. Honest notes on payouts and risks. DYOR always.">
+  <meta property="og:title" content="Crypto Passive Income Network">
+  <meta property="og:description" content="Community-tested crypto earning platforms with honest payout and risk notes. No hype.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mrarti3.pages.dev/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.png">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1729 100%);
-            min-height: 100vh;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        nav {
-            background: rgba(20, 25, 50, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        nav h1 {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #4caf50;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        nav a:hover, nav a.active {
-            color: #ffd700;
-            background: rgba(76, 175, 80, 0.2);
-        }
-
-        .tabs { display: none; }
-        .tabs.active { display: block; }
-
-        .hero {
-            background: rgba(20, 25, 50, 0.8);
-            padding: 3rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            text-align: center;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            color: #d0d0d0;
-            font-size: 1.2rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            color: #0a0e27;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .stat-card h4 {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .referral-section {
-            background: rgba(20, 25, 50, 0.8);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .referral-section h3 {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .referral-links-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .referral-link-item {
-            background: rgba(10, 14, 39, 0.9);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #4caf50;
-        }
-
-        .referral-link-item h4 {
-            color: #ffd700;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .referral-link-item p {
-            color: #d0d0d0;
-            margin-bottom: 1rem;
-        }
-
-        .click-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-            color: white !important;
-            padding: 0.6rem 1.2rem !important;
-            border-radius: 6px;
-            margin-top: 0.5rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .click-link:hover {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            color: #0a0e27 !important;
-            text-decoration: none !important;
-        }
-
-        .community-card {
-            background: rgba(20, 25, 50, 0.8);
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .community-card h3 {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
-        }
-
-        .members-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .member-item {
-            background: rgba(10, 14, 39, 0.9);
-            padding: 1rem;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-container {
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .messages-box {
-            flex: 1;
-            background: rgba(10, 14, 39, 0.9);
-            border-radius: 8px;
-            padding: 1rem;
-            overflow-y: auto;
-        }
-
-        .message {
-            background: rgba(76, 175, 80, 0.15);
-            padding: 0.75rem;
-            border-radius: 8px;
-            margin-bottom: 0.75rem;
-        }
-
-        .message-author {
-            color: #ffd700;
-            font-weight: bold;
-        }
-
-        .chat-input-group {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .chat-input-group input {
-            flex: 1;
-            padding: 0.75rem;
-            border-radius: 8px;
-            border: 1px solid rgba(76, 175, 80, 0.4);
-            background: rgba(10, 14, 39, 0.9);
-            color: white;
-        }
-
-        .chat-input-group button {
-            background: linear-gradient(135deg, #ffd700 0%, #4caf50 100%);
-            color: #0a0e27;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .join-form {
-            background: rgba(10, 14, 39, 0.9);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
-
-        .join-form h4 {
-            color: #ffd700;
-            margin-bottom: 1rem;
-        }
-
-        .join-form input {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            border: 1px solid rgba(76, 175, 80, 0.4);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-        }
-
-        .join-form button {
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 2rem;
-            color: #888;
-        }
-
-        footer {
-            background: rgba(20, 25, 50, 0.95);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 1rem; text-align: center; }
-            nav ul { flex-direction: column; gap: 0.5rem; }
-            .member-item { flex-direction: column; gap: 0.5rem; text-align: center; }
-        }
-    </style>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #21262d;
+      --muted: #8b949e;
+      --accent: #7c5cff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 950px; margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      position: sticky; top: 0; z-index: 10;
+    }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; flex-wrap: wrap; gap: .5rem; }
+    .logo { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.05rem; }
+    .logo span { color: var(--accent); }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; font-size: .95rem; }
+    nav a:hover { color: #fff; }
+    .hero { padding: 3.5rem 0 2.5rem; text-align: center; }
+    .hero h1 { font-size: 2.1rem; color: #f0f6fc; margin-bottom: .75rem; }
+    .hero p { color: var(--muted); max-width: 42rem; margin: 0 auto; font-size: 1.05rem; }
+    section { padding: 2.5rem 0; }
+    h2 { color: #f0f6fc; font-size: 1.4rem; margin-bottom: 1.25rem; }
+    .tier-label { color: var(--accent); font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 1.75rem 0 .75rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .listing {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex; flex-direction: column;
+    }
+    .listing h3 { font-size: 1.05rem; color: #f0f6fc; margin-bottom: .4rem; }
+    .listing .desc { font-size: .9rem; color: #c9d1d9; margin-bottom: .5rem; }
+    .listing .meta { font-size: .82rem; color: var(--muted); margin-bottom: .4rem; }
+    .listing .risk { font-size: .82rem; color: var(--muted); border-left: 2px solid var(--accent); padding-left: .6rem; margin-bottom: .9rem; flex-grow: 1; }
+    .btn {
+      display: inline-block; background: var(--accent); color: #fff;
+      padding: .5rem 1rem; border-radius: 8px; text-decoration: none;
+      font-size: .88rem; font-weight: 600; text-align: center;
+    }
+    .btn:hover { opacity: .9; }
+    .steps { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+    .step { border-left: 3px solid var(--accent); padding-left: 1rem; }
+    .step strong { color: #f0f6fc; display: block; margin-bottom: .25rem; }
+    .faq details {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: .5rem;
+    }
+    .faq summary { cursor: pointer; font-weight: 600; color: #f0f6fc; }
+    .disclaimer {
+      border-top: 1px solid var(--border);
+      margin-top: 2.5rem; padding: 2rem 0;
+      font-size: .85rem; color: var(--muted);
+    }
+    footer { padding: 1.5rem 0 2.5rem; text-align: center; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 600px) { .hero h1 { font-size: 1.6rem; } }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <h1>💰 Crypto Passive Income</h1>
-            <ul>
-                <li><a class="nav-link active" onclick="switchTab('referrals')">My Links</a></li>
-                <li><a class="nav-link" onclick="switchTab('community')">Community</a></li>
-                <li><a class="nav-link" onclick="switchTab('about')">About</a></li>
-            </ul>
-        </nav>
 
-        <div id="referrals" class="tabs active">
-            <div class="stats-grid">
-                <div class="stat-card"><h4 id="totalLinks">12</h4><p>Active Links</p></div>
-                <div class="stat-card"><h4 id="totalMembers">...</h4><p>Network Members</p></div>
-            </div>
+<header>
+  <div class="wrap">
+    <span class="logo">Crypto Passive Income <span>Network</span></span>
+    <nav>
+      <a href="#links">Platforms</a>
+      <a href="#how">How we list</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
 
-            <div class="hero">
-                <h2>Build Your Passive Income Network</h2>
-                <p>Verified crypto opportunities, staking rewards, and DeFi platforms.</p>
-            </div>
+<section class="hero">
+  <div class="wrap">
+    <h1>Crypto Earnings, Without the Hype</h1>
+    <p>A community collection of platforms for earning crypto — bandwidth sharing, games, and reward sites. Every listing comes with honest payout details and risk notes, because most referral sites won't give you either.</p>
+  </div>
+</section>
 
-            <div class="join-form">
-                <h4>➕ Join the Network</h4>
-                <input type="text" id="joinName" placeholder="Enter your username">
-                <button onclick="joinNetwork()">Join Now</button>
-            </div>
+<section id="links">
+  <div class="wrap">
 
-            <div class="referral-section">
-                <h3>⛓️ Crypto Referral Links</h3>
-                <div class="referral-links-list" id="referralLinksList"></div>
-            </div>
-        </div>
-
-        <div id="community" class="tabs">
-            <div class="hero">
-                <h2>👥 Community Hub</h2>
-                <p>Connect with members, share opportunities, and grow together!</p>
-            </div>
-
-            <div class="community-card">
-                <h3>👥 Members</h3>
-                <div class="members-list" id="membersList"></div>
-            </div>
-
-            <div class="community-card">
-                <h3>💬 Community Chat</h3>
-                <div class="chat-container">
-                    <div class="messages-box" id="messagesBox"></div>
-                    <div class="chat-input-group">
-                        <input type="text" id="chatInput" placeholder="Type your message...">
-                        <button onclick="sendMessage()">Send</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="about" class="tabs">
-            <div class="hero">
-                <h2>About This Network</h2>
-                <p>A community dedicated to building passive income through crypto opportunities.</p>
-            </div>
-            <div class="community-card">
-                <h3>ℹ️ About</h3>
-                <p style="color:#d0d0d0; line-height:1.8;">Welcome to the Crypto Passive Income Network! Share verified referral links and grow together.</p>
-                <p style="color:#d0d0d0; margin-top:1rem;"><strong style="color:#ffd700;">Disclaimer:</strong> Do your own research. Crypto investments carry risk.</p>
-            </div>
-        </div>
-
-        <footer>
-            <p>💎 Building Wealth Together | Passive Income Starts Here</p>
-        </footer>
+    <div class="tier-label">Tier 1 — Established, real companies</div>
+    <div class="cards">
+      <div class="listing">
+        <h3>Honeygain</h3>
+        <p class="desc">Passive income by sharing your unused internet bandwidth.</p>
+        <p class="meta">Payout: PayPal / JMPT · $20 minimum</p>
+        <p class="risk">Runs constantly in the background. Don't use on work, university, or shared networks where bandwidth sharing violates policy.</p>
+        <a class="btn" href="https://www.honeygain.com/">Visit Honeygain</a>
+      </div>
+      <div class="listing">
+        <h3>TraffMonetizer</h3>
+        <p class="desc">Get paid for the internet traffic you're not using.</p>
+        <p class="meta">Payout: Crypto / PayPal · $10 minimum</p>
+        <p class="risk">Same precautions as any bandwidth-sharing app. Earnings are modest — this is pocket money, not income.</p>
+        <a class="btn" href="https://traffmonetizer.com/">Visit TraffMonetizer</a>
+      </div>
+      <div class="listing">
+        <h3>Uprock</h3>
+        <p class="desc">Earn from your idle internet connection.</p>
+        <p class="meta">Payout: Crypto · varies</p>
+        <p class="risk">Newer than the others above — treat earnings expectations conservatively.</p>
+        <a class="btn" href="https://uprock.com/">Visit Uprock</a>
+      </div>
     </div>
 
-    <script>
-        const API_URL = 'https://mrarti3.mrarti3.workers.dev';
-        
-        let referrals = [
-            {id:1, name:"BetFury", url:"https://betfury.io/", description:"Crypto gaming with daily earnings"},
-            {id:2, name:"Final Autoclaim", url:"https://www.finalauto.info/", description:"Auto-claiming rewards platform"},
-            {id:3, name:"Chainers.io", url:"https://chainers.io/", description:"Earn crypto from tasks and activities"},
-            {id:4, name:"Rollercoin", url:"https://rollercoin.com/", description:"Mining simulator game with real rewards"},
-            {id:5, name:"Cointiply", url:"https://cointiply.com/", description:"Earn cryptocurrency completing tasks"},
-            {id:6, name:"Freecash", url:"https://freecash.com/", description:"Get paid for surveys and tasks"},
-            {id:7, name:"Fire Faucet", url:"https://firefaucet.com/", description:"High-paying crypto faucet"},
-            {id:8, name:"SimpleBits", url:"https://simplebits.io/", description:"Earn BTC from various activities"},
-            {id:9, name:"Vie Faucet", url:"https://viefaucet.com/", description:"Automated faucet earnings"},
-            {id:10, name:"Honeygain", url:"https://www.honeygain.com/", description:"Passive income from your internet"},
-            {id:11, name:"Uprock", url:"https://uprock.com/", description:"Earn from your idle bandwidth"},
-            {id:12, name:"TraffMonetizer", url:"https://traffmonetizer.com/", description:"Monetize your internet traffic"}
-        ];
+    <div class="tier-label">Tier 2 — Games &amp; task platforms (active effort required)</div>
+    <div class="cards">
+      <div class="listing">
+        <h3>Rollercoin</h3>
+        <p class="desc">Mining simulator game with real crypto rewards.</p>
+        <p class="meta">Free to play · earnings scale with time invested</p>
+        <p class="risk">Earnings are small unless you're highly active. It's a game first, an income source second.</p>
+        <a class="btn" href="https://rollercoin.com/">Visit Rollercoin</a>
+      </div>
+      <div class="listing">
+        <h3>Chainers</h3>
+        <p class="desc">Earn crypto from tasks and in-game activities.</p>
+        <p class="meta">Task-based · variable earnings</p>
+        <p class="risk">NFT/Web3 elements — never spend more than you're willing to lose.</p>
+        <a class="btn" href="https://chainers.io/">Visit Chainers</a>
+      </div>
+      <div class="listing">
+        <h3>Cointiply</h3>
+        <p class="desc">Earn cryptocurrency completing surveys and tasks.</p>
+        <p class="meta">Payout: Bitcoin / Doge / LTC · low minimum</p>
+        <p class="risk">Hourly rates are low. Only worth it if you'd do surveys anyway.</p>
+        <a class="btn" href="https://cointiply.com/">Visit Cointiply</a>
+      </div>
+      <div class="listing">
+        <h3>Freecash</h3>
+        <p class="desc">Get paid for surveys, offers, and tasks.</p>
+        <p class="meta">Multiple payout options · low minimum</p>
+        <p class="risk">Offer walls vary by country. Read offer terms carefully before starting — completion tracking can fail.</p>
+        <a class="btn" href="https://freecash.com/">Visit Freecash</a>
+      </div>
+    </div>
 
-        async function loadMembers() {
-            try {
-                const res = await fetch(`${API_URL}/api/members`);
-                const members = await res.json();
-                displayMembers(members);
-                document.getElementById('totalMembers').innerHTML = members.length;
-            } catch (e) {
-                console.error('Failed to load members', e);
-                document.getElementById('membersList').innerHTML = '<div class="loading">Failed to load members. Please refresh.</div>';
-            }
-        }
+    <div class="tier-label">Tier 3 — Faucets &amp; auto-earners (tiny earnings, listed for completeness)</div>
+    <div class="cards">
+      <div class="listing">
+        <h3>BetFury</h3>
+        <p class="desc">Crypto gaming platform with daily earnings.</p>
+        <p class="meta">Crypto · varies</p>
+        <p class="risk"><strong>Gambling-adjacent — highest risk on this list.</strong> Never deposit more than you can afford to lose entirely.</p>
+        <a class="btn" href="https://betfury.io/">Visit BetFury</a>
+      </div>
+      <div class="listing">
+        <h3>Fire Faucet</h3>
+        <p class="desc">Auto-claiming crypto faucet.</p>
+        <p class="meta">Multiple coins · very small amounts</p>
+        <p class="risk">Faucet earnings are fractions of a cent per hour. Time investment rarely justifies returns.</p>
+        <a class="btn" href="https://firefaucet.com/">Visit Fire Faucet</a>
+      </div>
+    </div>
 
-        async function loadMessages() {
-            try {
-                const res = await fetch(`${API_URL}/api/messages`);
-                const messages = await res.json();
-                displayMessages(messages);
-            } catch (e) {
-                console.error('Failed to load messages', e);
-            }
-        }
+  </div>
+</section>
 
-        async function joinNetwork() {
-            let nameInput = document.getElementById('joinName');
-            let name = nameInput.value.trim();
-            if(!name) {
-                alert('Please enter a username');
-                return;
-            }
-            
-            if(name.toLowerCase() === 'mrarti3') {
-                alert('This username is reserved for the founder.');
-                return;
-            }
-            
-            try {
-                const res = await fetch(`${API_URL}/api/members`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name: name })
-                });
-                
-                if(res.ok) {
-                    nameInput.value = '';
-                    await loadMembers();
-                    alert(`Welcome ${name}!`);
-                } else {
-                    const error = await res.json();
-                    alert(error.error || 'Failed to join');
-                }
-            } catch (e) {
-                alert('Failed to join. Please try again.');
-            }
-        }
+<section id="how">
+  <div class="wrap">
+    <h2>How this list works</h2>
+    <div class="steps">
+      <div class="step"><strong>1. Tested</strong><p>I only list platforms I've personally signed up for and used.</p></div>
+      <div class="step"><strong>2. Documented</strong><p>Each listing shows payout method, minimum, and what to watch out for.</p></div>
+      <div class="step"><strong>3. Ranked honestly</strong><p>Organized by trust tier. Bandwidth platforms lead because they're the most legitimate; gambling-adjacent platforms sit at the bottom with warnings.</p></div>
+      <div class="step"><strong>4. Maintained</strong><p>Dead platforms and payout failures get delisted. This list is current as of June 2026.</p></div>
+    </div>
+  </div>
+</section>
 
-        async function sendMessage() {
-            let input = document.getElementById('chatInput');
-            let text = input.value.trim();
-            if(!text) return;
-            
-            let author = localStorage.getItem('chatName');
-            if(!author) {
-                author = prompt('Enter your name for chat:');
-                if(!author) return;
-                localStorage.setItem('chatName', author);
-            }
-            
-            try {
-                await fetch(`${API_URL}/api/messages`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ author, text })
-                });
-                input.value = '';
-                await loadMessages();
-            } catch (e) {
-                alert('Failed to send message');
-            }
-        }
+<section id="faq" class="faq">
+  <div class="wrap">
+    <h2>FAQ</h2>
+    <details>
+      <summary>Do these links earn you commissions?</summary>
+      <p>Yes, most are referral links — that's how the site stays online. Commission never decides ranking; Tier 3 platforms are listed last precisely because honest ordering matters more than payout.</p>
+    </details>
+    <details>
+      <summary>How much can I actually earn?</summary>
+      <p>Realistically: bandwidth apps generate small but genuine passive amounts. Games and task sites require active time for low hourly rates. Faucets pay pennies. Anyone promising otherwise is selling something.</p>
+    </details>
+    <details>
+      <summary>Is this financial advice?</summary>
+      <p>No. Nothing here is financial advice. Do your own research before signing up anywhere.</p>
+    </details>
+  </div>
+</section>
 
-        function displayMembers(members) {
-            let html = '';
-            if(members.length === 0) {
-                html = '<div class="loading">No members yet. Be the first to join!</div>';
-            } else {
-                members.forEach(m => {
-                    // Check if this is the founder (database name is "You" or "MrArti3")
-                    let isFounder = (m.name === 'You' || m.name === 'MrArti3');
-                    let displayName = isFounder ? 'MrArti3' : m.name;
-                    let role = isFounder ? 'Network Owner' : 'Member';
-                    let avatar = isFounder ? '👑' : '👤';
-                    let joinInfo = isFounder ? 'Founder' : `Joined: ${new Date(m.created_at).toLocaleDateString()}`;
-                    html += `<div class="member-item">
-                        <span><strong>${avatar} ${displayName}</strong></span>
-                        <span>${role}</span>
-                        <span>${joinInfo}</span>
-                    </div>`;
-                });
-            }
-            document.getElementById('membersList').innerHTML = html;
-        }
+<footer class="disclaimer">
+  <div class="wrap">
+    <p><strong>Disclaimer:</strong> This site shares links to third-party platforms we do not control and does not guarantee returns. Nothing here is financial advice. Most links are referral links, disclosed per listing. Crypto earnings are small and volatile; always do your own research.</p>
+    <p style="margin-top:1rem;">Building wealth together — slowly, and with eyes open. 💎</p>
+  </div>
+</footer>
 
-        function displayMessages(messages) {
-            let html = '';
-            if(messages.length === 0) {
-                html = '<div class="loading">No messages yet. Say hello!</div>';
-            } else {
-                messages.slice(-50).forEach(m => {
-                    let authorClass = m.author === 'System' ? 'style="color:#ffd700;"' : '';
-                    html += `<div class="message"><span class="message-author" ${authorClass}>${m.author}:</span> ${m.text}<div style="font-size:0.75rem;color:#888;">${new Date(m.timestamp).toLocaleTimeString()}</div></div>`;
-                });
-            }
-            let box = document.getElementById('messagesBox');
-            if(box) {
-                box.innerHTML = html;
-                box.scrollTop = box.scrollHeight;
-            }
-        }
-
-        function displayReferrals() {
-            let html = '';
-            referrals.forEach(r => {
-                html += `<div class="referral-link-item">
-                    <h4>${r.name}</h4>
-                    <p>${r.description}</p>
-                    <a href="${r.url}" target="_blank" class="click-link">🔗 Click Here to Join ${r.name}</a>
-                </div>`;
-            });
-            document.getElementById('referralLinksList').innerHTML = html;
-            document.getElementById('totalLinks').innerHTML = referrals.length;
-        }
-
-        function switchTab(tabName) {
-            document.querySelectorAll('.tabs').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
-        }
-
-        setInterval(() => {
-            loadMessages();
-            loadMembers();
-        }, 5000);
-
-        document.getElementById('chatInput')?.addEventListener('keypress', function(e) {
-            if(e.key === 'Enter') sendMessage();
-        });
-
-        displayReferrals();
-        loadMembers();
-        loadMessages();
-    </script>
 </body>
 </html>
