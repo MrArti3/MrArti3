@@ -47,7 +47,7 @@ INSERT INTO referrals (name, url, description) VALUES
 ('Cointiply', 'https://cointiply.com/', 'Earn cryptocurrency completing tasks'),
 ('Freecash', 'https://freecash.com/', 'Get paid for surveys and tasks'),
 ('Fire Faucet', 'https://firefaucet.com/', 'High-paying crypto faucet'),
-('SimpleBits', 'https://simplebits.io/', 'Earn BTC from various activities'),
+('SimpleBits', 'https://simplebits.io/ref/68ZCQAiclS_X', 'Earn BTC from various activities'),
 ('Honeygain', 'https://www.honeygain.com/', 'Passive income from your internet'),
 ('Uprock', 'https://uprock.com/', 'Earn from your idle bandwidth'),
 ('TraffMonetizer', 'https://traffmonetizer.com/', 'Monetize your internet traffic');
