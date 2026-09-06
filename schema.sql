@@ -48,7 +48,6 @@ INSERT INTO referrals (name, url, description) VALUES
 ('Freecash', 'https://freecash.com/', 'Get paid for surveys and tasks'),
 ('Fire Faucet', 'https://firefaucet.com/', 'High-paying crypto faucet'),
 ('SimpleBits', 'https://simplebits.io/', 'Earn BTC from various activities'),
-('Vie Faucet', 'https://viefaucet.com/', 'Automated faucet earnings'),
 ('Honeygain', 'https://www.honeygain.com/', 'Passive income from your internet'),
 ('Uprock', 'https://uprock.com/', 'Earn from your idle bandwidth'),
 ('TraffMonetizer', 'https://traffmonetizer.com/', 'Monetize your internet traffic');
